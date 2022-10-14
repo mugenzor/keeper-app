@@ -3,7 +3,7 @@ import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
 
-function CreateArea(props) {
+function CreateArea({onAdd}) {
   const [isExpanded, setExpanded] = useState(false);
 
   const [note, setNote] = useState({
@@ -23,7 +23,7 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
-    props.onAdd(note);
+    onAdd(note);
     setNote({
       title: "",
       content: ""
